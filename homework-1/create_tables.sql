@@ -20,7 +20,7 @@ CREATE TABLE orders
 	order_id int PRIMARY KEY,
 	customer_id char(5) REFERENCES customers(customer_id),
 	employee_id int REFERENCES employees(employee_id),
-	order_date date
-	ship_city varchar(30),
+	order_date date,
+	ship_city varchar(30)
 
 );
