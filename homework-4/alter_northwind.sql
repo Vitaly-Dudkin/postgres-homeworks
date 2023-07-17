@@ -3,7 +3,8 @@
 alter table products add constraint chk_products_unit_price check (unit_price > 0);
 
 -- 2. Добавить ограничение, что поле discontinued таблицы products может содержать только значения 0 или 1
-alter table products add constraint chk_products_unit_price check (unit_price > 0);
+ALTER TABLE products
+ADD CONSTRAINT chk_products_discontinued CHECK (discontinued IN (0, 1))
 
 -- 3. Создать новую таблицу, содержащую все продукты, снятые с продажи (discontinued = 1)
 select * into discontinued_products
